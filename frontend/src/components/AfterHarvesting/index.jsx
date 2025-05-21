@@ -1,11 +1,30 @@
 import React from "react";
 import "./index.css";
+const AfterHarvesting = ({ capitalGain }) => {
+  const shortTerm_Profit = capitalGain.stcg.profits?capitalGain.stcg.profits:"$0.00";
+  const shortTerm_Losses = capitalGain.stcg.losses?capitalGain.stcg.losses:"$0.00";
+  const netRealised_shortTerm = shortTerm_Profit + shortTerm_Losses;
 
-export default function AfterHarvesting() {
+  const longTerm_Profit = capitalGain.ltcg.profits?capitalGain.ltcg.profits:"$0.00";
+  const longTerm_Losses = capitalGain.ltcg.losses?  capitalGain.ltcg.losses:"$0.00";
+  const netRealised_longTerm = longTerm_Profit + longTerm_Losses;
+
   const metrics = [
-    { label: "Profits", shortTerm: "$4,049.48", longTerm: "$0.00" },
-    { label: "Losses", shortTerm: "$16.79M", longTerm: "$0.00" },
-    { label: "Net Capital Gains", shortTerm: "-$16.79M", longTerm: "$0.00" },
+    {
+      label: "Profits",
+      shortTerm: shortTerm_Profit,
+      longTerm: longTerm_Profit,
+    },
+    {
+      label: "Losses",
+      shortTerm: shortTerm_Losses,
+      longTerm: longTerm_Losses,
+    },
+    {
+      label: "Net Capital Gains",
+      shortTerm: netRealised_shortTerm,
+      longTerm: netRealised_longTerm,
+    },
   ];
 
   return (
@@ -23,19 +42,11 @@ export default function AfterHarvesting() {
           {metrics.map((item, index) => (
             <tr key={index}>
               <td className="label">{item.label}</td>
-              <td
-                className={`value ${
-                  item.shortTerm.includes("-") ? "negative" : ""
-                }`}
-              >
-                {item.shortTerm}
+              <td className={`value ${item.shortTerm < 0 ? "negative" : ""}`}>
+                ${item.shortTerm}
               </td>
-              <td
-                className={`value ${
-                  item.longTerm.includes("-") ? "negative" : ""
-                }`}
-              >
-                {item.longTerm}
+              <td className={`value ${item.longTerm<0 ? "negative" : ""}`}>
+                ${item.longTerm}
               </td>
             </tr>
           ))}
@@ -44,12 +55,14 @@ export default function AfterHarvesting() {
       <div className="note-section">
         <p className="label">
           Effective Capital Gains:{" "}
-          <span className="value total-negative">-$16.79M</span>
+          <span className="value total-negative">${metrics[2].shortTerm-metrics[2].longTerm}</span>
         </p>
-        <p className="note">
+        {/* <p className="note">
           📉 Your taxable capital gains are reduced by: $16.76M
-        </p>
+        </p> */}
       </div>
     </div>
   );
-}
+};
+
+export default AfterHarvesting;

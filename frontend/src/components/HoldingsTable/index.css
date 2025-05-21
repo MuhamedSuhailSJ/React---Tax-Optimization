@@ -47,3 +47,21 @@ td {
   background-color: rgba(0, 128, 255, 0.1);
 }
 
+img{
+  width:30px;
+  margin-top:20px;
+  margin-right:10px;
+}
+
+.coin-info{
+  display: flex;
+  padding:0;
+  margin:0;
+}
+
+.coin-info p{
+  width:150px;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis ;
+}
