@@ -1,0 +1,58 @@
+.after-harvesting {
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: none;
+}
+
+.metrics-table th,
+.metrics-table td {
+  text-align: left;
+  padding: 10px;
+  background: none;
+  padding: 10px;
+}
+
+.metrics-table th {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #e0f7ff;
+  font-weight: normal;
+  background: none;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.value {
+  font-size: 14px;
+}
+
+.negative {
+  color: #ffe6e6;
+}
+
+.total-negative {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+}
+
+.note-section {
+  margin-top: 20px;
+}
+
+.note {
+  font-size: 12px;
+  margin-top: 5px;
+}

@@ -1,0 +1,43 @@
+.pre-harvesting {
+  background-color: #181824;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.metrics-table th,
+.metrics-table td {
+  text-align: left;
+  padding: 10px;
+}
+
+.metrics-table td {
+  padding: 10px;
+  border: none;
+}
+
+.metrics-table th {
+  background-color: #1e1e1e;
+  color: #cccccc;
+  font-weight: normal;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.value {
+  font-size: 14px;
+}
+
+.negative {
+  color: #ff4d4f;
+}

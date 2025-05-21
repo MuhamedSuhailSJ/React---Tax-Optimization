@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import PreHarvesting from "./components/PreHarvesting";
+import AfterHarvesting from "./components/AfterHarvesting";
+import HoldingsTable from "./components/HoldingsTable";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [CoinsList, setCoinsList] = React.useState([]);
+
+  useEffect(() => {
+    const fetchCoins = async () => {
+      const response = await fetch("http://localhost:3001/coins");
+      const data = await response.json();
+      setCoinsList(data);
+    };
+    fetchCoins();
+    
+
+  }, []);
+
+  const filterdCoins = CoinsList;
+  console.log("filterdCoins", filterdCoins);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="dashboard">
+        <PreHarvesting filterdCoins={filterdCoins} />
+        <AfterHarvesting filterdCoins={filterdCoins} />
+      </div>
+      <HoldingsTable />
     </div>
   );
 }
