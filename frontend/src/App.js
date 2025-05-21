@@ -18,13 +18,13 @@ const App = () => {
   useEffect(() => {
     const fetchdetials = async () => {
       const response1 = await fetch(
-        "https://react-tax-optimization.vercel.app/coins"
+        "https://react-tax-optimization-z1jq.vercel.app/coins"
       );
       const data1 = await response1.json();
       setCoinsList(data1);
 
       const response2 = await fetch(
-        "https://react-tax-optimization.vercel.app/capital-gains"
+        "https://react-tax-optimization-z1jq.vercel.app/capital-gains"
       );
       const data2 = await response2.json();
       setCapitalGain(data2);
