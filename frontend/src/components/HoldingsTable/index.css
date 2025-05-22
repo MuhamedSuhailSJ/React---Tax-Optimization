@@ -65,3 +65,10 @@ img{
   overflow: hidden;
   text-overflow: ellipsis ;
 }
+
+.view-more{
+  color: #007bff;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
