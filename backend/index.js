@@ -469,5 +469,5 @@ app.get("/capital-gains", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on the http://localhost:${PORT}`);
 });
