@@ -26,23 +26,6 @@ A React-based dashboard for visualizing and managing crypto holdings with a focu
 
 ---
 
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── Holdings.js          # Displays asset list
-│   ├── PreHarvesting.js     # Capital gains before harvesting
-│   ├── AfterHarvesting.js   # Capital gains after harvesting
-│   └── ...
-├── styles/
-│   └── Holdings.css         # Styling for holdings table
-├── App.js                   # Main application component
-└── index.js                 # Entry point
-```
-
----
-
 ## 📦 Installation
 
 1. **Clone the repo**
